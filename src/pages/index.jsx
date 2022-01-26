@@ -3,7 +3,7 @@ import { client } from "../libs/client";
 
 export default function Home({ blog }) {
   return (
-    <div>
+    <div className="bg-gray-200">
       <ul>
         {blog.map((blog) => (
           <li key={blog.id}>
