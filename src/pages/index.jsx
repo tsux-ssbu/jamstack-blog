@@ -1,29 +1,13 @@
-import Link from "next/link";
-import { client } from "../libs/client";
-
-export default function Home({ blog }) {
+export default function Home() {
   return (
-    <div className="bg-gray-200">
-      <ul>
-        {blog.map((blog) => (
-          <li key={blog.id}>
-            <Link href={`/blog/${blog.id}`}>
-              <a>{blog.title}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+    <div className="h-screen bg-gray-100">
+      <div className="mx-auto w-11/12 h-screen bg-slate-400 md:w-3/6">
+        <header>header</header>
+        <div>image</div>
+        <div>ABOUT</div>
+        <div>WORKS</div>
+        <footer>fotter</footer>
+      </div>
     </div>
   );
 }
-
-// データをテンプレートに受け渡す部分の処理
-export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: "blog" });
-
-  return {
-    props: {
-      blog: data.contents,
-    },
-  };
-};
