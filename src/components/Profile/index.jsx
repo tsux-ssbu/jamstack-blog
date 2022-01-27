@@ -1,4 +1,22 @@
 import Image from "next/image";
+import Link from "next/link";
+
+import { SiZenn, SiGithub, SiTwitter } from "react-icons/si";
+
+const ICONS = [
+  {
+    icon: <SiGithub size={25} color={"#292929"} />,
+    url: "https://github.com/tsux-ssbu",
+  },
+  {
+    icon: <SiZenn size={25} color={"#449eda"} />,
+    url: "https://zenn.dev/tsuxxx",
+  },
+  {
+    icon: <SiTwitter size={25} color={"#449eda"} />,
+    url: "https://twitter.com/tsux_ssbu",
+  },
+];
 
 export const Profile = () => {
   return (
@@ -13,7 +31,17 @@ export const Profile = () => {
         />
       </div>
       <h2 className="font-mono">Tomoya Tsukamura</h2>
-      <p>Github Zenn Twiiter note</p>
+      <div className="flex flex-row mt-4 space-x-4">
+        {ICONS.map((item) => {
+          return (
+            <div key={item.icon} className="hover:cursor-pointer">
+              <Link href={item.url}>
+                <a target="_blank">{item.icon}</a>
+              </Link>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
