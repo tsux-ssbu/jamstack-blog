@@ -7,7 +7,6 @@ import { Works } from "../components/Works";
 export default function Home() {
   return (
     <>
-      <Header />
       <Profile />
       <div className="mx-auto w-11/12 md:w-10/12">
         <About />
