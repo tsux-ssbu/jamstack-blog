@@ -9,8 +9,10 @@ export default function Home() {
     <>
       <Header />
       <Profile />
-      <About />
-      <Works />
+      <div className="mx-auto w-11/12 md:w-10/12">
+        <About />
+        <Works />
+      </div>
       <Footer />
     </>
   );

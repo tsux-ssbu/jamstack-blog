@@ -7,12 +7,11 @@ export const Profile = () => {
         <Image
           src="/images/avatar.JPG"
           alt="Picture of the author"
-          width={150}
-          height={150}
+          width={200}
+          height={200}
           className="rounded-full"
         />
       </div>
-
       <h2>Tomoya Tsukamura</h2>
       <p>Github Zenn Twiiter note</p>
     </div>
