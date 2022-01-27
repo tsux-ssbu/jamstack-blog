@@ -2,13 +2,14 @@ import { client } from "../../libs/client";
 
 export default function BlogId({ blog }) {
   return (
-    <main>
+    <main className="mx-auto mt-8 w-11/12 md:w-10/12">
       <h1>{blog.title}</h1>
       <p>{blog.publishedAt}</p>
-      <div
+      <article
         dangerouslySetInnerHTML={{
           __html: `${blog.body}`,
         }}
+        className="prose prose-blue"
       />
     </main>
   );
