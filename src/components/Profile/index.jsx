@@ -30,7 +30,7 @@ export const Profile = () => {
           className="rounded-full"
         />
       </div>
-      <h2 className="font-mono">Tomoya Tsukamura</h2>
+      <h2>Tomoya Tsukamura</h2>
       <div className="flex flex-row mt-4 space-x-4">
         {ICONS.map((item) => {
           return (
