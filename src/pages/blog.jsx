@@ -1,19 +1,34 @@
 import Link from "next/link";
 import { client } from "../libs/client";
 
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
 export default function Blog({ blog }) {
   return (
-    <div className="bg-gray-200">
-      <ul>
-        {blog.map((blog) => (
-          <li key={blog.id}>
-            <Link href={`/blog/${blog.id}`}>
-              <a>{blog.title}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <main className="mt-8">
+      <div className="mx-auto w-11/12 md:w-10/12">
+        <ul>
+          {blog.map((blog) => (
+            <li key={blog.id}>
+              <Link href={`/blog/${blog.id}`}>
+                <a className="text-2xl font-bold">{blog.title}</a>
+              </Link>
+              <p>
+                {dayjs
+                  .utc(blog.publishedAt)
+                  .tz("Asia/Tokyo")
+                  .format("YYYY-MM-DD")}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </main>
   );
 }
 
