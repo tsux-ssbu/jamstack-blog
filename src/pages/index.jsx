@@ -1,32 +1,16 @@
-import Image from "next/image";
-import Link from "next/link";
+import { Header } from "../components/Header";
+import { Profile } from "../components/Profile";
 
 export default function Home() {
   return (
     <>
-      <header className="flex justify-between">
-        <h1>TOMOYA</h1>
-        <div>
-          <Link href="/blog">
-            <a>Articles</a>
-          </Link>
-        </div>
-      </header>
+      <Header />
+      <Profile />
       <div>
-        <Image
-          src="/images/avatar.JPG"
-          alt="Picture of the author"
-          width={100}
-          height={100}
-          className="rounded-full"
-        />
-        <h2>Tomoya Tsukamura</h2>
-        <p>Github Zenn Twiiter</p>
-      </div>
-      <div>
-        <h2>about</h2>
+        <h2>About me</h2>
         <p>
-          岡山大学経済学部生(23卒)です。 最近はReact, Next.js,
+          岡山大学経済学部生(23卒)。
+          1年くらいプログラミングを学んでいます。最近はReact, Next.js,
           TypeScriptあたりを学んでいます。
         </p>
       </div>
