@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const Profile = () => {
   return (
-    <div className="flex flex-col justify-center items-center bg-green-100">
+    <div className="flex flex-col justify-center items-center ">
       <div className="m-4">
         <Image
           src="/images/avatar.JPG"
