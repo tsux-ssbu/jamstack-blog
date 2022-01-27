@@ -12,7 +12,7 @@ export const Profile = () => {
           className="rounded-full"
         />
       </div>
-      <h2>Tomoya Tsukamura</h2>
+      <h2 className="font-mono">Tomoya Tsukamura</h2>
       <p>Github Zenn Twiiter note</p>
     </div>
   );

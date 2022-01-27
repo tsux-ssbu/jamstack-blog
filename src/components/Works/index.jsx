@@ -2,6 +2,15 @@ import Link from "next/link";
 
 const PRODUCT_ITEMS = [
   {
+    title: "portfolio",
+    discription:
+      "このサイトです。Jamstackな自分のサイトがほしいと思ってつくりました。振り返りだったり、技術的でない記事を気軽に投稿できるところがほしかったです。",
+    url: "https://population-transition-chart-tsux.vercel.app/",
+    zenn: undefined,
+    github: "https://github.com/tsux-ssbu/microcms-next-jamstack-blog",
+    lang: ["Next.js", "microCMS", "tailwindcss"],
+  },
+  {
     title: "20.Timer",
     discription:
       "たいていのことは20時間学習したら習得できるという20時間の法則を実践することを支援するシンプルなカウントダウンタイマー+メモアプリです。",
@@ -33,7 +42,7 @@ const PRODUCT_ITEMS = [
 export const Works = () => {
   return (
     <div className="flex flex-col justify-center items-center mt-8">
-      <h2 className="self-start md:ml-16">Works</h2>
+      <h1 className="self-start font-mono md:ml-16">Works</h1>
       <div className="w-11/12 md:w-8/12">
         {PRODUCT_ITEMS.map((product) => {
           return (
