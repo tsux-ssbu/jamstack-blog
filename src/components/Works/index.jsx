@@ -46,17 +46,17 @@ export const Works = () => {
       <div className="w-11/12 md:w-8/12">
         {PRODUCT_ITEMS.map((product) => {
           return (
-            <div key={product.title} className="mt-4 ">
+            <div key={product.title} className="mt-8 ">
               <h3 className="text-lg font-semibold">{product.title}</h3>
               <p className="">{product.discription}</p>
-              <span>
+              <span className="mt-2">
                 使用技術：
                 {product.lang.map((item) => {
                   return item + "  ";
                 })}
               </span>
 
-              <div>
+              <div className="mt-2">
                 <Link href={product.url}>
                   <a
                     target="_blank"

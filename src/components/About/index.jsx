@@ -3,12 +3,10 @@ export const About = () => {
     <div className="flex flex-col justify-center items-center mt-8">
       <h1 className="self-start ml-0 font-mono md:ml-16">About me</h1>
       <div className="mt-4 w-11/12 md:w-8/12">
-        <ul>
-          <li>岡山大学経済学部生(23卒)</li>
-          <li>1年くらいプログラミングを学んでいます</li>
-          <li>CS50でコンピューターサイエンスを学びました</li>
-          <li>フロントエンド開発が好きです</li>
-        </ul>
+        <p>
+          岡山大学経済学部(23卒)で、1年くらいプログラミングを学んでいます。
+          CS50でコンピューターサイエンスの基礎を学びました。フロントエンド開発が好きで、今はTypeScript,Next.jsを学んでいます。
+        </p>
       </div>
     </div>
   );
