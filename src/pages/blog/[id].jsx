@@ -1,15 +1,22 @@
 import { client } from "../../libs/client";
 
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
 export default function BlogId({ blog }) {
   return (
-    <main className="mx-auto mt-8 w-11/12 md:w-10/12">
+    <main className="mx-auto mt-12 w-11/12 h-screen md:w-10/12">
       <h1>{blog.title}</h1>
-      <p>{blog.publishedAt}</p>
+      <p>{dayjs.utc(blog.publishedAt).tz("Asia/Tokyo").format("YYYY-MM-DD")}</p>
       <article
         dangerouslySetInnerHTML={{
           __html: `${blog.body}`,
         }}
-        className="prose prose-blue"
+        className="mt-12 prose prose-blue"
       />
     </main>
   );

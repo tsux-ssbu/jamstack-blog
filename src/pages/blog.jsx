@@ -10,11 +10,11 @@ dayjs.extend(timezone);
 
 export default function Blog({ blog }) {
   return (
-    <main className="mt-8">
+    <main className="mt-12 h-screen">
       <div className="mx-auto w-11/12 md:w-10/12">
         <ul>
           {blog.map((blog) => (
-            <li key={blog.id}>
+            <li key={blog.id} className="mt-8">
               <Link href={`/blog/${blog.id}`}>
                 <a className="text-2xl font-bold">{blog.title}</a>
               </Link>
