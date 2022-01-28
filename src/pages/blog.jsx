@@ -16,7 +16,9 @@ export default function Blog({ blog }) {
           {blog.map((blog) => (
             <li key={blog.id} className="mt-8">
               <Link href={`/blog/${blog.id}`}>
-                <a className="text-2xl font-bold">{blog.title}</a>
+                <a className="text-2xl font-bold hover:underline">
+                  {blog.title}
+                </a>
               </Link>
               <p>
                 {dayjs
