@@ -9,7 +9,7 @@ dayjs.extend(timezone);
 
 export default function BlogId({ blog }) {
   return (
-    <main className="mx-auto mt-12 w-11/12 h-screen md:w-10/12">
+    <main className="mx-auto mt-12 w-11/12 md:w-10/12">
       <h1>{blog.title}</h1>
       <p>{dayjs.utc(blog.publishedAt).tz("Asia/Tokyo").format("YYYY-MM-DD")}</p>
       <article
