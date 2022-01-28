@@ -34,7 +34,7 @@ const PRODUCT_ITEMS = [
       "都道府県別人口推移を表示します。とある企業の選考課題でつくった。外部APIやチャートライブラリを使うのは初めてだったので勉強になったです。(選考は無事落ちちゃいました)",
     url: "https://population-transition-chart-tsux.vercel.app/",
     zenn: undefined,
-    github: "https://github.com/tsux-ssbu/yumemi-task",
+    github: undefined,
     lang: ["Next.js", "highcharts"],
   },
 ];
