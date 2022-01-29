@@ -6,7 +6,7 @@ const PRODUCT_ITEMS = [
     discription:
       "このサイトです。Jamstackな自分のサイトがほしいと思ってつくりました。振り返りだったり、技術的でない記事を気軽に投稿できるところがほしかったです。",
     url: "https://portfolio-tarot18.vercel.app/",
-    zenn: undefined,
+    zenn: "https://zenn.dev/tsuxxx/articles/df7c536dcdadfb",
     github: "https://github.com/tsux-ssbu/microcms-next-jamstack-blog",
     lang: ["Next.js", "microCMS", "tailwindcss"],
   },
