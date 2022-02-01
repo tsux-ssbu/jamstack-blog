@@ -5,7 +5,7 @@ export const Header = () => {
     <header className="flex justify-between p-4 h-12 leading-10 md:p-12">
       <h1>
         <Link href="/">
-          <a>Tsux</a>
+          <a>tsux.dev</a>
         </Link>
       </h1>
       <div>
