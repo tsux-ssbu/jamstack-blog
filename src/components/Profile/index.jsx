@@ -7,14 +7,17 @@ const ICONS = [
   {
     icon: <SiGithub size={25} color={"#292929"} />,
     url: "https://github.com/tsux-ssbu",
+    title: "Github",
   },
   {
     icon: <SiZenn size={25} color={"#449eda"} />,
     url: "https://zenn.dev/tsuxxx",
+    title: "Zenn",
   },
   {
     icon: <SiTwitter size={25} color={"#449eda"} />,
     url: "https://twitter.com/tsux_ssbu",
+    title: "Twitter",
   },
 ];
 
@@ -36,7 +39,9 @@ export const Profile = () => {
           return (
             <div key={item.icon} className="hover:cursor-pointer">
               <Link href={item.url}>
-                <a target="_blank">{item.icon}</a>
+                <a title={item.title} target="_blank">
+                  {item.icon}
+                </a>
               </Link>
             </div>
           );
