@@ -47,7 +47,7 @@ export const Works = () => {
         {PRODUCT_ITEMS.map((product) => {
           return (
             <div key={product.title} className="mt-8 ">
-              <h3 className="text-lg font-semibold">{product.title}</h3>
+              <span className="text-lg font-semibold">{product.title}</span>
               <p className="">{product.discription}</p>
               <span className="mt-2">
                 使用技術：
@@ -60,7 +60,7 @@ export const Works = () => {
                 <Link href={product.url}>
                   <a
                     target="_blank"
-                    className="mr-4 text-blue-500 hover:underline"
+                    className="mr-4 hover:text-blue-500 hover:underline"
                   >
                     サービスURL↗
                   </a>
@@ -69,7 +69,7 @@ export const Works = () => {
                   <Link href={product.zenn}>
                     <a
                       target="_blank"
-                      className="mr-4 text-blue-500 hover:underline"
+                      className="mr-4 hover:text-blue-500 hover:underline"
                     >
                       Zenn↗
                     </a>
@@ -79,7 +79,7 @@ export const Works = () => {
                   <Link href={product.github}>
                     <a
                       target="_blank"
-                      className="text-blue-500 hover:underline"
+                      className="hover:text-blue-500 hover:underline"
                     >
                       github↗
                     </a>
