@@ -41,22 +41,23 @@ const PRODUCT_ITEMS = [
 
 export const Works = () => {
   return (
-    <div className="flex flex-col justify-center items-center mt-8">
+    <div className="flex flex-col justify-center items-center mt-8 ">
       <h1 className="self-start md:ml-16">Works</h1>
       <div className="w-11/12 md:w-8/12">
         {PRODUCT_ITEMS.map((product) => {
           return (
-            <div key={product.title} className="mt-8 ">
+            <div key={product.title} className="p-4 mt-8 bg-gray-50 rounded-md">
               <span className="text-lg font-semibold">{product.title}</span>
               <p className="">{product.discription}</p>
               <span className="mt-2">
                 使用技術：
                 {product.lang.map((item) => {
-                  return item + "  ";
+                  return item + " / ";
                 })}
               </span>
 
               <div className="mt-2">
+                <span>リンク：</span>
                 <Link href={product.url}>
                   <a
                     target="_blank"
