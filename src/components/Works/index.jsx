@@ -57,7 +57,6 @@ export const Works = () => {
               </span>
 
               <div className="mt-2">
-                <span>リンク：</span>
                 <Link href={product.url}>
                   <a
                     target="_blank"
