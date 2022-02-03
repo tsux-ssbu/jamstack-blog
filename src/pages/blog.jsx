@@ -35,7 +35,7 @@ export default function Blog({ blog }) {
                 </p>
                 <div
                   className={`flex items-center h-6 ${
-                    blog.category && categoryColor[`${blog.category.name}`]
+                    blog.category && categoryColor[blog.category.name]
                   }  rounded-sm`}
                 >
                   <p className="px-1 text-sm font-bold leading-8 ">
