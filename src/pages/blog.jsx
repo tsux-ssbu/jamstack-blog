@@ -12,21 +12,12 @@ export default function Blog({ blog, category }) {
   const categoryColor = {
     Self: "bg-green-300",
     Dev: "bg-blue-300",
-    Colect: "bg-pink-300",
+    Collect: "bg-pink-300",
   };
 
   return (
     <main className="mt-12 h-screen">
       <div className="mx-auto w-11/12 md:w-10/12">
-        <ul>
-          {category.map((category) => (
-            <li key={category.id}>
-              <Link href={`/category/${category.id}`}>
-                <a>{category.name}</a>
-              </Link>
-            </li>
-          ))}
-        </ul>
         <ul>
           {blog.map((blog) => (
             <li key={blog.id} className="mt-8">
@@ -55,6 +46,20 @@ export default function Blog({ blog, category }) {
             </li>
           ))}
         </ul>
+        <div className="mt-12">
+          <h2 className="leading-8 border-b-2">カテゴリー</h2>
+          <ul className="p-4">
+            {category.map((category) => (
+              <li key={category.id} className="mt-4  ">
+                <Link href={`/category/${category.id}`}>
+                  <a className="flex items-center h-6 text-lg font-bold rounded-sm">
+                    {category.name}
+                  </a>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </main>
   );
