@@ -8,7 +8,7 @@ import timezone from "dayjs/plugin/timezone";
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
-export default function Blog({ blog }) {
+export default function Blog({ blog, category }) {
   const categoryColor = {
     Self: "bg-green-300",
     Dev: "bg-blue-300",
@@ -18,6 +18,15 @@ export default function Blog({ blog }) {
   return (
     <main className="mt-12 h-screen">
       <div className="mx-auto w-11/12 md:w-10/12">
+        <ul>
+          {category.map((category) => (
+            <li key={category.id}>
+              <Link href={`/category/${category.id}`}>
+                <a>{category.name}</a>
+              </Link>
+            </li>
+          ))}
+        </ul>
         <ul>
           {blog.map((blog) => (
             <li key={blog.id} className="mt-8">
@@ -54,10 +63,12 @@ export default function Blog({ blog }) {
 // データをテンプレートに受け渡す部分の処理
 export const getStaticProps = async () => {
   const data = await client.get({ endpoint: "blog" });
+  const categoryData = await client.get({ endpoint: "categories" });
 
   return {
     props: {
       blog: data.contents,
+      category: categoryData.contents,
     },
   };
 };
