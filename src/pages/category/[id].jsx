@@ -6,7 +6,9 @@ export default function CategoryId({ blog }) {
   if (blog.length === 0) {
     return (
       <div className="mx-auto mt-12 w-11/12 h-screen md:w-10/12">
-        ブログコンテンツがありません
+        <p className="text-2xl font-bold hover:underline">
+          ブログコンテンツがありません
+        </p>
       </div>
     );
   }
@@ -14,9 +16,9 @@ export default function CategoryId({ blog }) {
     <div className="mx-auto mt-12 w-11/12 h-screen md:w-10/12">
       <ul>
         {blog.map((blog) => (
-          <li key={blog.id}>
+          <li key={blog.id} className="mt-8">
             <Link href={`/blog/${blog.id}`}>
-              <a>{blog.title}</a>
+              <a className="text-2xl font-bold hover:underline">{blog.title}</a>
             </Link>
           </li>
         ))}
