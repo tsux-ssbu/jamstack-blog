@@ -1,13 +1,6 @@
 import Link from "next/link";
 import { client } from "../libs/client";
 
-import dayjs from "dayjs";
-import utc from "dayjs/plugin/utc";
-import timezone from "dayjs/plugin/timezone";
-
-dayjs.extend(utc);
-dayjs.extend(timezone);
-
 export default function Blog({ blog, category }) {
   const categoryColor = {
     Self: "bg-green-300",
@@ -27,12 +20,7 @@ export default function Blog({ blog, category }) {
                 </a>
               </Link>
               <div className="flex items-center">
-                <p className="mr-8">
-                  {dayjs
-                    .utc(blog.publishedAt)
-                    .tz("Asia/Tokyo")
-                    .format("YYYY-MM-DD")}
-                </p>
+                <p className="mr-8">時間が入る</p>
                 <div
                   className={`flex items-center h-6 ${
                     blog.category && categoryColor[blog.category.name]
