@@ -1,8 +1,10 @@
+import { NextPage } from "next";
+
 import { About } from "../components/About";
 import { Profile } from "../components/Profile";
 import { Works } from "../components/Works";
 
-export default function Home() {
+const Home: NextPage = () => {
   return (
     <>
       <Profile />
@@ -12,4 +14,6 @@ export default function Home() {
       </div>
     </>
   );
-}
+};
+
+export default Home;
