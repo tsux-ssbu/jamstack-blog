@@ -1,12 +1,19 @@
+import { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
-import { client } from "../libs/client";
 
-export default function Blog({ blog }) {
+import { client } from "../libs/client";
+import { BlogType } from "../type/blog";
+
+type Props = {
+  allBlogsData: BlogType[];
+};
+
+const Blog: NextPage<Props> = ({ allBlogsData }) => {
   return (
     <main className="mt-12 h-screen">
       <div className="mx-auto w-11/12 md:w-10/12">
         <ul>
-          {blog.map((blog) => (
+          {allBlogsData.map((blog: BlogType) => (
             <li key={blog.id} className="mt-8">
               <Link href={`/blog/${blog.id}`}>
                 <a className="text-2xl font-bold hover:underline">
@@ -22,14 +29,15 @@ export default function Blog({ blog }) {
       </div>
     </main>
   );
-}
+};
 
-// データをテンプレートに受け渡す部分の処理
-export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: "blog" });
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const allBlogsData = await client.get({ endpoint: "blog" });
   return {
     props: {
-      blog: data.contents,
+      allBlogsData: allBlogsData.contents,
     },
   };
 };
+
+export default Blog;
