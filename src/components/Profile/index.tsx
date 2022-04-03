@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { VFC } from "react";
 
 import { SiZenn, SiGithub, SiTwitter } from "react-icons/si";
 
@@ -21,7 +22,7 @@ const ICONS = [
   },
 ];
 
-export const Profile = () => {
+export const Profile: VFC = () => {
   return (
     <div className="flex flex-col justify-center items-center ">
       <div className="m-4">
@@ -37,7 +38,7 @@ export const Profile = () => {
       <div className="flex flex-row mt-4 space-x-4">
         {ICONS.map((item) => {
           return (
-            <div key={item.icon} className="hover:cursor-pointer">
+            <div key={item.url} className="hover:cursor-pointer">
               <Link href={item.url}>
                 <a title={item.title} target="_blank">
                   {item.icon}

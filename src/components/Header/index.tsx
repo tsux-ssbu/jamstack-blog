@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { VFC } from "react";
 
-export const Header = () => {
+export const Header: VFC = () => {
   return (
     <header className="flex justify-between p-4 h-12 leading-10 md:p-12">
       <h1>

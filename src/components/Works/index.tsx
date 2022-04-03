@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { VFC } from "react";
 
 const PRODUCT_ITEMS = [
   {
@@ -39,7 +40,7 @@ const PRODUCT_ITEMS = [
   },
 ];
 
-export const Works = () => {
+export const Works: VFC = () => {
   return (
     <div className="flex flex-col justify-center items-center mt-8 ">
       <h1 className="self-start md:ml-16">Works</h1>
