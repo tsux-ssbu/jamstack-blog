@@ -9,7 +9,7 @@ const PRODUCT_ITEMS = [
     url: "https://www.tsux.dev/",
     zenn: "https://zenn.dev/tsuxxx/articles/df7c536dcdadfb",
     github: "https://github.com/tsux-ssbu/microcms-next-jamstack-blog",
-    lang: ["Next.js", "microCMS", "tailwindcss"],
+    skills: ["Next.js", "microCMS", "tailwindcss"],
   },
   {
     title: "20.Timer",
@@ -18,7 +18,7 @@ const PRODUCT_ITEMS = [
     url: "https://twenty-hours-timer.com/",
     zenn: "https://zenn.dev/tsuxxx/articles/03bdd626266d13",
     github: "https://github.com/tsux-ssbu/supatimer",
-    lang: ["Next.js", "Supabase", "Chakra UI"],
+    skills: ["Next.js", "Supabase", "Chakra UI"],
   },
   {
     title: "5minutes todo app",
@@ -27,16 +27,15 @@ const PRODUCT_ITEMS = [
     url: "https://apps.apple.com/jp/app/5minutes-todo/id1598084813",
     zenn: "https://zenn.dev/tsuxxx/articles/3b2bd7ca9ba631",
     github: "https://github.com/tsux-ssbu/5minutes",
-    lang: ["React Native", "Firebase"],
+    skills: ["React Native", "Firebase"],
   },
   {
-    title: "都道府県別の総人口推移グラフ",
-    discription:
-      "都道府県別人口推移を表示します。とある企業の選考課題でつくりました。外部APIやチャートライブラリを使うのは初めてだったので勉強になったです。(面接で無事落ちちゃいました)",
-    url: "https://population-transition-chart-tsux.vercel.app/",
+    title: "simple-sns",
+    discription: "シンプルなSNSのデザイン, フロントエンドの開発を行いました。",
+    url: "https://simple-sns-alpha.vercel.app/",
     zenn: undefined,
-    github: "https://github.com/tsux-ssbu/yumemi-task",
-    lang: ["Next.js", "highcharts"],
+    github: undefined,
+    skills: ["Next.js", "TypeScript", "Recoil"],
   },
 ];
 
@@ -52,7 +51,7 @@ export const Works: VFC = () => {
               <p className="">{product.discription}</p>
               <span className="mt-2">
                 使用技術：
-                {product.lang.map((item) => {
+                {product.skills.map((item) => {
                   return item + " / ";
                 })}
               </span>
