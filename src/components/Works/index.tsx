@@ -12,6 +12,15 @@ const PRODUCT_ITEMS = [
     skills: ["Next.js", "microCMS", "tailwindcss"],
   },
   {
+    title: "sns",
+    discription:
+      "フロントエンド研修で仕様書に沿って, デザイン・フロントエンドの開発を行っています。無限スクロール, debounce機構を入れたインクリメンタルサーチ等、様々な機能を作っています。",
+    url: "https://advanced-sns.vercel.app/",
+    zenn: undefined,
+    github: undefined,
+    skills: ["Next.js", "TypeScript", "Recoil"],
+  },
+  {
     title: "20.Timer",
     discription:
       "たいていのことは20時間学習したら習得できるという20時間の法則を実践することを支援するシンプルなカウントダウンタイマー+メモアプリです。",
@@ -28,14 +37,6 @@ const PRODUCT_ITEMS = [
     zenn: "https://zenn.dev/tsuxxx/articles/3b2bd7ca9ba631",
     github: "https://github.com/tsux-ssbu/5minutes",
     skills: ["React Native", "Firebase"],
-  },
-  {
-    title: "simple-sns",
-    discription: "シンプルなSNSのデザイン, フロントエンドの開発を行いました。",
-    url: "https://simple-sns-alpha.vercel.app/",
-    zenn: undefined,
-    github: undefined,
-    skills: ["Next.js", "TypeScript", "Recoil"],
   },
 ];
 
