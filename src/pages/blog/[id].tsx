@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 
 import { MicroCMSContentId, MicroCMSDate } from 'microcms-js-sdk'
+import dayjs from 'dayjs'
 
 import { client } from '@/libs/client'
 import { Blog } from '../blog'
@@ -10,16 +11,14 @@ type Props = Blog & MicroCMSContentId & MicroCMSDate
 const BlogId: NextPage<Props> = (props) => {
   return (
     <main className='mx-auto mt-12 w-11/12 md:w-10/12'>
-      <h1>{props.title}</h1>
-      <time>{props.publishedAt}</time>
-      <div>
-        <article
-          dangerouslySetInnerHTML={{
-            __html: `${props.body}`,
-          }}
-          className='mt-12 prose prose-blue'
-        />
-      </div>
+      <h1 className='text-2xl font-bold'>{props.title}</h1>
+      <time dateTime={props.publishedAt}>{dayjs(props.publishedAt).format('YYYY/MM/DD')}</time>
+      <div
+        dangerouslySetInnerHTML={{
+          __html: `${props.body}`,
+        }}
+        className='mt-12 prose prose-blue'
+      />
     </main>
   )
 }

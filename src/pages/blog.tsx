@@ -2,6 +2,7 @@ import { GetStaticProps, NextPage } from 'next'
 import Link from 'next/link'
 
 import { MicroCMSListResponse } from 'microcms-js-sdk'
+import dayjs from 'dayjs'
 
 import { BlogType } from '@/type/blog'
 import { client } from '@/libs/client'
@@ -17,14 +18,16 @@ const Blog: NextPage<Props> = (props) => {
   return (
     <main className='mt-12 h-screen'>
       <div className='mx-auto w-11/12 md:w-10/12'>
-        <ul>
+        <ul className='space-y-8'>
           {props.contents?.map((content: BlogType) => (
-            <li key={content.id} className='mt-8'>
+            <li key={content.id}>
               <Link href={`/blog/${content.id}`}>
-                <a className='text-2xl font-bold hover:underline'>{content.title}</a>
+                <a className='text-2xl font-bold hover:text-gray-400'>{content.title}</a>
               </Link>
               <div>
-                <time>{content.publishedAt}</time>
+                <time dateTime={content.publishedAt}>
+                  {dayjs(content.publishedAt).format('YYYY/MM/DD')}
+                </time>
               </div>
             </li>
           ))}
