@@ -1,47 +1,49 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 
-import { BlogType } from '@/type/blog'
+import { MicroCMSContentId, MicroCMSDate } from 'microcms-js-sdk'
+import dayjs from 'dayjs'
+
 import { client } from '@/libs/client'
+import { Blog } from '../blog'
 
-type Props = {
-  blog: BlogType
-}
+type Props = Blog & MicroCMSContentId & MicroCMSDate
 
-const BlogId: NextPage<Props> = ({ blog }) => {
+const BlogId: NextPage<Props> = (props) => {
   return (
     <main className='mx-auto mt-12 w-11/12 md:w-10/12'>
-      <h1>{blog.title}</h1>
-      {/* <p>時間が入る</p> */}
+      <h1 className='text-2xl font-bold'>{props.title}</h1>
+      <time dateTime={props.publishedAt}>{dayjs(props.publishedAt).format('YYYY/MM/DD')}</time>
       <article
         dangerouslySetInnerHTML={{
-          __html: `${blog.body}`,
+          __html: `${props.body}`,
         }}
-        className='mt-12 prose prose-blue'
+        className='mt-8 prose prose-blue'
       />
     </main>
   )
 }
 
-// 静的生成のためのパスを指定
-export const getStaticPaths: GetStaticPaths<Pick<BlogType, 'id'>> = async () => {
-  const data = await client.get({ endpoint: 'blog' })
-  const paths = data.contents.map((content: any) => `/blog/${content.id}`)
-  return { paths, fallback: false }
+export const getStaticPaths: GetStaticPaths<{ id: string }> = async () => {
+  const data = await client.getList({ endpoint: 'blog' })
+  const ids = data.contents.map((content) => `/blog/${content.id}`)
+  return {
+    paths: ids,
+    fallback: false,
+  }
 }
 
-// データをテンプレートに受け渡す部分の処理を記述
-export const getStaticProps: GetStaticProps<Props, Pick<BlogType, 'id'>> = async ({ params }) => {
-  if (!params) {
+export const getStaticProps: GetStaticProps<Props, { id: string }> = async (ctx) => {
+  if (!ctx.params) {
     return {
       notFound: true,
     }
   }
-  const id = params.id
-  const data = await client.get({ endpoint: 'blog', contentId: id })
+  const data = await client.getListDetail<Blog>({
+    endpoint: 'blog',
+    contentId: ctx.params.id,
+  })
   return {
-    props: {
-      blog: data,
-    },
+    props: data,
   }
 }
 
