@@ -6,7 +6,7 @@ import { MicroCMSListResponse } from 'microcms-js-sdk'
 import { BlogType } from '@/type/blog'
 import { client } from '@/libs/client'
 
-type Blog = {
+export type Blog = {
   title: string
   body: string
 }
@@ -18,14 +18,14 @@ const Blog: NextPage<Props> = (props) => {
     <main className='mt-12 h-screen'>
       <div className='mx-auto w-11/12 md:w-10/12'>
         <ul>
-          {props.contents.map((content: BlogType) => (
+          {props.contents?.map((content: BlogType) => (
             <li key={content.id} className='mt-8'>
               <Link href={`/blog/${content.id}`}>
                 <a className='text-2xl font-bold hover:underline'>{content.title}</a>
               </Link>
-              {/* <div className="flex items-center">
-                <p className="mr-8">時間が入る</p>
-              </div> */}
+              <div>
+                <time>{content.publishedAt}</time>
+              </div>
             </li>
           ))}
         </ul>
@@ -35,7 +35,7 @@ const Blog: NextPage<Props> = (props) => {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const data = await client.getList({ endpoint: 'blog' })
+  const data = await client.getList<Blog>({ endpoint: 'blog' })
   return {
     props: data,
   }
