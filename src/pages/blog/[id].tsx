@@ -13,11 +13,11 @@ const BlogId: NextPage<Props> = (props) => {
     <main className='mx-auto mt-12 w-11/12 md:w-10/12'>
       <h1 className='text-2xl font-bold'>{props.title}</h1>
       <time dateTime={props.publishedAt}>{dayjs(props.publishedAt).format('YYYY/MM/DD')}</time>
-      <div
+      <article
         dangerouslySetInnerHTML={{
           __html: `${props.body}`,
         }}
-        className='mt-12 prose prose-blue'
+        className='mt-8 prose prose-blue'
       />
     </main>
   )
